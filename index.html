@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Sailu! 💗</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Trebuchet MS", sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe0ec, #fce7f3);
+      color: #773d5a;
+      text-align: center;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      padding: 14px 25px;
+      background: #e75480;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 15px #e7548030;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.06);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+    }
+
+    .cake {
+      font-size: 90px;
+      animation: bounce 2s infinite;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 8vw, 60px);
+      color: #d94680;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      color: #d94680;
+      margin-bottom: 18px;
+      font-size: 28px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .subtitle {
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+
+    .section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 65px 22px;
+    }
+
+    .card {
+      background: #ffffffc9;
+      padding: 25px;
+      border-radius: 22px;
+      margin: 18px 0;
+      box-shadow: 0 8px 25px #a33e6410;
+      border: 1px solid #ffffff;
+    }
+
+    .joke {
+      color: #9d4670;
+      font-size: 19px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .reveal {
+      animation: fadeIn 1.2s ease both;
+    }
+
+    .letter {
+      background: #fffafc;
+      border: 2px dashed #ef9abb;
+      border-radius: 22px;
+      padding: 30px 23px;
+      text-align: left;
+      line-height: 2;
+    }
+
+    .letter p {
+      margin-bottom: 15px;
+    }
+
+    .signature {
+      color: #d94680;
+      font-weight: bold;
+      text-align: right;
+      margin-top: 22px;
+    }
+
+    footer {
+      padding: 30px 15px;
+      background: #fbd5e5;
+      font-size: 14px;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -40px;
+      pointer-events: none;
+      z-index: 5;
+      animation: floatUp linear forwards;
+    }
+
+    .confetti {
+      position: fixed;
+      top: -20px;
+      pointer-events: none;
+      z-index: 10;
+      animation: fall 3s linear forwards;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-14px) rotate(3deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0.8;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section { padding: 45px 17px; }
+      .card { padding: 20px; }
+      .letter { padding: 22px 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Welcome surprise -->
+  <section class="hero" id="welcome">
+    <div class="cake">🎂</div>
+    <p>✨ A little surprise for someone very special ✨</p>
+    <h1>Hey, Sailu! 💗</h1>
+
+    <p class="subtitle">
+      Today is all about you, my little sister!
+      Your annoying akka has prepared something special.
+      Ready for your surprise?
+    </p>
+
+    <button onclick="openSurprise()">
+      Open Your Surprise 🎁
+    </button>
+
+    <p style="margin-top: 25px; font-size: 14px;">
+      Warning: May contain unlimited love and akka's drama 😂
+    </p>
+  </section>
+
+  <!-- Main birthday celebration -->
+  <main id="birthday" class="hidden">
+
+    <section class="hero reveal">
+      <div class="cake">🎂🎀🎉</div>
+      <p>It's your special day!</p>
+      <h1>Happy Birthday, Sailu!</h1>
+
+      <p class="subtitle">
+        November 3 is extra special because the world
+        got YOU. And I got the privilege of being your akka. 💕
+      </p>
+
+      <button onclick="celebrate()">More Birthday Magic ✨</button>
+    </section>
+
+    <!-- Funny sister jokes -->
+    <section class="section">
+      <h2>Official Sailu Awards 🏆</h2>
+      <p>Your akka has made a very serious investigation.</p>
+
+      <div class="card">
+        <div style="font-size: 45px;">👑</div>
+        <p class="joke">The Drama Queen Award</p>
+        <p>For turning one tiny problem into a 3-season web series.</p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 45px;">🍟</div>
+        <p class="joke">The Food-Sharing Fraud Award</p>
+        <p>"Akka, just one bite!" Then half my food disappears. 😂</p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 45px;">😇</div>
+        <p class="joke">The Innocent Face Award</p>
+        <p>Creates the problem, looks innocent, and somehow blames akka!</p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 45px;">💖</div>
+        <p class="joke">The Forever Favourite Award</p>
+        <p>Annoying? Absolutely. Replaceable? NEVER!</p>
+      </div>
+
+      <button onclick="showRoast()">One Last Truth 😂</button>
+      <p id="roast" class="hidden reveal" style="margin-top: 22px;">
+        Sailu, you are lucky I love you. Otherwise,
+        who would tolerate this much drama for free? 🤣💕
+      </p>
+    </section>
+
+    <!-- Birthday wishes -->
+    <section class="section">
+      <h2>My Wishes for You 🌷</h2>
+
+      <div class="card">
+        <p>
+          🌸 May your smile always stay bright.<br>
+          🌈 May your dreams become reality.<br>
+          🧿 May you always be surrounded by love.<br>
+          🦋 May you have courage for every new beginning.<br>
+          🎂 And may you get lots of cake today!
+        </p>
+      </div>
+    </section>
+
+    <!-- Emotional letter -->
+    <section class="section">
+      <h2>A Letter from Your Akka 💌</h2>
+
+      <div class="letter">
+        <p>My dearest Sailu, ❤️</p>
+
+        <p>
+          Happy Birthday, my little sister!
+          I may tease you, fight with you, steal your snacks,
+          and annoy you for absolutely no reason.
+          But behind every joke is a heart that loves you so much.
+        </p>
+
+        <p>
+          Being your akka is one of the sweetest parts of my life.
+          No matter how much we fight or how different our days become,
+          you will always have a special place in my heart.
+        </p>
+
+        <p>
+          I wish I could protect you from every sadness,
+          celebrate every little victory with you,
+          and see you achieve all the beautiful things you dream of.
+        </p>
+
+        <p>
+          Always remember that you never have to face life alone.
+          Your akka will always be cheering for you,
+          believing in you, and standing beside you whenever you need me.
+        </p>
+
+        <p>
+          Grow happily, dream fearlessly, and never lose the beautiful
+          person you are. You deserve so much happiness, Sailu. 🥹💕
+        </p>
+
+        <p>
+          And remember one important thing:
+          even when you become old, I will STILL be your akka
+          and I will STILL tease you! 😂
+        </p>
+
+        <p class="signature">
+          With all my love,<br>
+          Your Akka, Prasuna ❤️
+        </p>
+      </div>
+    </section>
+
+    <!-- Final surprise -->
+    <section class="section">
+      <div class="cake">💗</div>
+      <h2>One Last Thing, Sailu...</h2>
+
+      <p class="subtitle">
+        You are not just my little sister.
+        You are my childhood, my memories, my forever family,
+        and a piece of my heart.
+      </p>
+
+      <button onclick="finalSurprise()">
+        Click for the Final Surprise 💝
+      </button>
+
+      <div id="finalMessage" class="card hidden reveal"
+           style="margin-top: 25px;">
+        <div style="font-size: 55px;">🥹💖🫂</div>
+        <h2>LOVE YOU FOREVER, SAILU!</h2>
+        <p>
+          Happy Birthday, my little one.
+          The world is lucky to have you,
+          but I'm luckier because I get to call you my sister.
+        </p>
+        <p style="margin-top: 15px; font-weight: bold;">
+          — Your Prasuna Akka 💕
+        </p>
+        <p style="margin-top: 15px;">
+          Now give your akka a birthday hug.
+          No excuses allowed! 😂🫂
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Made with endless love by Prasuna Akka 💗
+    <br>
+    For Sailu, on November 3 and forever.
+  </footer>
+
+  <script>
+    let surpriseOpened = false;
+
+    function openSurprise() {
+      if (surpriseOpened) return;
+      surpriseOpened = true;
+
+      document.getElementById("welcome").classList.add("hidden");
+      document.getElementById("birthday").classList.remove("hidden");
+
+      celebrate();
+      createHearts();
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function celebrate() {
+      const symbols = ["💖", "🎉", "✨", "💕", "🌸", "🎊", "💗"];
+
+      for (let i = 0; i < 65; i++) {
+        const piece = document.createElement("span");
+        piece.className = "confetti";
+        piece.textContent =
+          symbols[Math.floor(Math.random() * symbols.length)];
+
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.fontSize = (12 + Math.random() * 20) + "px";
+        piece.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => piece.remove(), 5200);
+      }
+    }
+
+    function createHearts() {
+      const symbols = ["💗", "💕", "💖", "♡"];
+
+      for (let i = 0; i < 18; i++) {
+        const heart = document.createElement("span");
+        heart.className = "heart";
+        heart.textContent =
+          symbols[Math.floor(Math.random() * symbols.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (18 + Math.random() * 20) + "px";
+        heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 11500);
+      }
+    }
+
+    function showRoast() {
+      document.getElementById("roast").classList.remove("hidden");
+      celebrate();
+    }
+
+    function finalSurprise() {
+      document.getElementById("finalMessage").classList.remove("hidden");
+      celebrate();
+      createHearts();
+    }
+  </script>
+
+</body>
+</html>
